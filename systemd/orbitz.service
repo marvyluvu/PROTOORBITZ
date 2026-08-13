@@ -1,0 +1,22 @@
+[Unit]
+Description=ORBITZ hardware firmware
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/orbitz
+ExecStart=/opt/orbitz-venv/bin/python -m orbitz_firmware.main
+Restart=on-failure
+RestartSec=5
+User=root
+Group=root
+UMask=0077
+ReadWritePaths=/var/lib/orbitz
+NoNewPrivileges=false
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+Pillow>=10.0,<12
+luma.core>=2.4,<3
+luma.lcd>=2.11,<3
+gpiozero>=2.0,<3
+lgpio>=0.2,<1
+rpi-ws281x>=5.0,<6
+requests>=2.31,<3
+skyfield>=1.49,<2

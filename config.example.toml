@@ -1,0 +1,71 @@
+[runtime]
+state_dir = "/var/lib/orbitz"
+log_level = "INFO"
+display_frame_rate = 12.0
+input_debounce_seconds = 0.03
+enable_diagnostics_hold = false
+diagnostics_hold_seconds = 2.0
+
+[display]
+width = 240
+height = 320
+rotation = 0
+spi_port = 0
+spi_device = 0
+spi_hz = 32000000
+mosi_pin = 10
+sclk_pin = 11
+cs_pin = 8
+dc_pin = 24
+reset_pin = 25
+
+[inputs]
+encoder_a_pin = 17
+encoder_b_pin = 27
+encoder_switch_pin = 22
+button_previous_pin = 23
+button_next_pin = 5
+external_pull_up = true
+encoder_inverted = false
+
+[leds]
+pin = 18
+count = 8
+brightness_cap = 0.25
+color_order = "GRB"
+dma_channel = 10
+
+[buzzer]
+pin = 12
+muted = false
+
+[observer]
+fallback_latitude = 25.3463
+fallback_longitude = 55.4209
+fallback_elevation_m = 0.0
+gps_grace_seconds = 300.0
+
+[gpsd]
+host = "127.0.0.1"
+port = 2947
+reconnect_max_seconds = 60.0
+
+[adsb]
+local_url = "http://127.0.0.1:8080/data/aircraft.json"
+timeout_seconds = 1.5
+stale_seconds = 30.0
+max_range_km = 400.0
+earth_curvature_correction = true
+opensky_enabled = false
+opensky_min_interval_seconds = 30.0
+opensky_url = "https://opensky-network.org/api/states/all"
+speed_unit = "knots"
+
+[orbits]
+groups = ["stations", "visual"]
+refresh_seconds = 43200.0
+geometry_refresh_seconds = 10.0
+target_elevation_threshold_deg = 10.0
+visible_twilight_threshold_deg = -6.0
+pass_alert_lead_seconds = 600.0
+request_timeout_seconds = 8.0
